@@ -50,7 +50,7 @@ pipeline {
                 npm install netlify-cli -g
                 echo 'Deploying to Netlify... with site ID: ' $NETLIFY_SITE_ID
                 netlify status
-                netlify deploy '--dir=build' --prod
+                netlify deploy '--dir=build' --prod no-build
                 echo 'Deployment complete.'
                 '''
             }
