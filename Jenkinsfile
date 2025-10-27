@@ -46,6 +46,7 @@ pipeline {
             }
             steps {
                 sh '''
+                apk add --no-cache bash
                 npm install netlify-cli -g
                 echo 'Deploying to Netlify... with site ID: ' $NETLIFY_SITE_ID
                 netlify status
