@@ -16,12 +16,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    ls -lah
-                    node --version
-                    npm --version
                     npm ci
-                    npm run build
-                    ls -lah
                 '''
             }
         }
@@ -51,9 +46,7 @@ pipeline {
             }
             steps {
                 sh '''
-                npm install
                 npm install netlify-cli -g
-                netlify --version
                 echo 'Deploying to Netlify... with site ID: ' $NETLIFY_SITE_ID
                 netlify status
                 netlify deploy '--dir=build' --prod
